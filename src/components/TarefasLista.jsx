@@ -1,17 +1,12 @@
 import "../assets/TarefasLista.css"
-
-const TarefasLista = ({ tarefas, onRemoveTarefas }) => {
+import TarefasItem from "./TarefasItem"
+const TarefasLista = ({ tarefas, onRemoveTarefas, editTarefa }) => {
     return (
         <ul className="tarefas-lista">
             {
                 tarefas.length > 0 ? (
                     tarefas.map((i) => {
-                        return (
-                            <li key={i.id} className="tarefas-item">
-                                {i.txt}
-                                <button className="btn-remove" onClick={() => { onRemoveTarefas(i.id) }}>X</button>
-                            </li>
-                        )
+                        return <TarefasItem key={i.id} tarefa={i} editTarefa={editTarefa} onRemoveTarefas={onRemoveTarefas}/>
                     })
                 ) : (
                     <span className="mensagem-vazia">Não há tarefas</span>
