@@ -18,6 +18,7 @@ const TarefasItem = ({ tarefa, editTarefa, onRemoveTarefas }) => {
     }
     return (
         <li className="tarefas-item">
+            <div className='p1'>
             {isEditing?
             <input 
             type="text" value={editInput}
@@ -43,7 +44,8 @@ const TarefasItem = ({ tarefa, editTarefa, onRemoveTarefas }) => {
                     <i className="fa-solid fa-trash-can"></i>
                 </button>
             </div>
-            <div className="txt-tiny">Criada em: {tarefa.data}</div>
+            </div>
+            <div className="txt-tiny">{tarefa.data}</div>
         </li>
     )
 }
